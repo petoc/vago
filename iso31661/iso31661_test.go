@@ -3,7 +3,7 @@ package iso31661
 import (
 	"testing"
 
-	"github.com/petoc/isogo/iso"
+	"github.com/petoc/vago/common"
 )
 
 func TestVal(t *testing.T) {
@@ -17,21 +17,21 @@ func TestVal(t *testing.T) {
 		"1234": []bool{false, false, false},
 	}
 	for c, e := range cs {
-		g := iso.Val(c, 2, 2, reA)
+		g := common.Val(c, 2, 2, reA)
 		if g != e[0] {
 			t.Errorf("%s: expected %v, got %v", c, e, g)
 			return
 		}
 	}
 	for c, e := range cs {
-		g := iso.Val(c, 3, 3, reA)
+		g := common.Val(c, 3, 3, reA)
 		if g != e[1] {
 			t.Errorf("%s: expected %v, got %v", c, e, g)
 			return
 		}
 	}
 	for c, e := range cs {
-		g := iso.Val(c, 3, 3, reN)
+		g := common.Val(c, 3, 3, reN)
 		if g != e[2] {
 			t.Errorf("%s: expected %v, got %v", c, e, g)
 			return

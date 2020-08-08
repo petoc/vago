@@ -3,7 +3,7 @@ package iso31662
 import (
 	"testing"
 
-	"github.com/petoc/isogo/iso"
+	"github.com/petoc/vago/common"
 )
 
 func TestVal(t *testing.T) {
@@ -25,7 +25,7 @@ func TestVal(t *testing.T) {
 		"AB-1234": false,
 	}
 	for c, e := range cs {
-		g := iso.Val(c, 4, 6, re)
+		g := common.Val(c, 4, 6, re)
 		if g != e {
 			t.Errorf("%s: expected %v, got %v", c, e, g)
 			return

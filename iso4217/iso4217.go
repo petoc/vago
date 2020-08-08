@@ -2,7 +2,8 @@ package iso4217
 
 import (
 	"regexp"
-	"github.com/petoc/isogo/iso"
+
+	"github.com/petoc/vago/common"
 )
 
 var (
@@ -13,7 +14,7 @@ var (
 
 // Is ...
 func Is(code string) (ok bool) {
-	if !iso.Val(code, 2, 3, re) {
+	if !common.Val(code, 2, 3, re) {
 		return false
 	}
 	_, ok = codes[code]
@@ -22,7 +23,7 @@ func Is(code string) (ok bool) {
 
 // Name ...
 func Name(code string) string {
-	if !iso.Val(code, 2, 3, re) {
+	if !common.Val(code, 2, 3, re) {
 		return ""
 	}
 	if i, ok := codes[code]; ok {

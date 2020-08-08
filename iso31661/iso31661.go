@@ -2,7 +2,8 @@ package iso31661
 
 import (
 	"regexp"
-	"github.com/petoc/isogo/iso"
+
+	"github.com/petoc/vago/common"
 )
 
 var (
@@ -23,19 +24,19 @@ const (
 func indexName(t int, code string) (i int, ok bool) {
 	switch t {
 	case ta2:
-		if !iso.Val(code, 2, 2, reA) {
+		if !common.Val(code, 2, 2, reA) {
 			return -1, false
 		}
 		i, ok = alpha2[code]
 		return
 	case ta3:
-		if !iso.Val(code, 3, 3, reA) {
+		if !common.Val(code, 3, 3, reA) {
 			return -1, false
 		}
 		i, ok = alpha3[code]
 		return
 	case tn:
-		if !iso.Val(code, 3, 3, reN) {
+		if !common.Val(code, 3, 3, reN) {
 			return -1, false
 		}
 		i, ok = numeric[code]
