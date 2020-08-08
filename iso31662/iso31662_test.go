@@ -52,9 +52,9 @@ func TestIs(t *testing.T) {
 func TestName(t *testing.T) {
 	cs := map[string]string{
 		"12":     "",
-		"AU-NSW": "New South Wales",
-		"AU-SA":  "South Australia",
-		"SE-K":   "Blekinge län",
+		"AU-NSW": "New South Wales, Australia",
+		"AU-SA":  "South Australia, Australia",
+		"SE-K":   "Blekinge län, Sweden",
 	}
 	for c, e := range cs {
 		g := Name(c)
