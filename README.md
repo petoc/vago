@@ -41,7 +41,7 @@ import "github.com/petoc/vago/iso31662"
 
 ```go
 iso31662.Is("AU-NSW")   // true
-iso31662.Name("AU-NSW") // New South Wales
+iso31662.Name("AU-NSW") // New South Wales, Australia
 ```
 
 ### ISO-3166-3
