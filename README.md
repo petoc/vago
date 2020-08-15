@@ -74,7 +74,6 @@ import "github.com/petoc/vago/tz"
 
 ```go
 tz.Is("Europe/Berlin") // true
-tz.Names("DE")         // [Europe/Berlin, Europe/Busingen]
 ```
 
 ## Sources
