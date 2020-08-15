@@ -2,8 +2,6 @@ package tz
 
 import (
 	"sort"
-
-	"github.com/petoc/vago/iso31661"
 )
 
 var (
@@ -22,7 +20,7 @@ func Is(name string) bool {
 
 // Names ...
 func Names(code string) []string {
-	if !iso31661.IsAlpha2(code) {
+	if len(code) != 2 {
 		return nil
 	}
 	if ii, ok := codes[code]; ok {

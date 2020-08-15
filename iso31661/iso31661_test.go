@@ -2,42 +2,7 @@ package iso31661
 
 import (
 	"testing"
-
-	"github.com/petoc/vago/common"
 )
-
-func TestVal(t *testing.T) {
-	cs := map[string][]bool{
-		"A1":   []bool{false, false, false},
-		"AB":   []bool{true, false, false},
-		"ABC":  []bool{false, true, false},
-		"ABCD": []bool{false, false, false},
-		"12":   []bool{false, false, false},
-		"123":  []bool{false, false, true},
-		"1234": []bool{false, false, false},
-	}
-	for c, e := range cs {
-		g := common.Val(c, 2, 2, reA)
-		if g != e[0] {
-			t.Errorf("%s: expected %v, got %v", c, e, g)
-			return
-		}
-	}
-	for c, e := range cs {
-		g := common.Val(c, 3, 3, reA)
-		if g != e[1] {
-			t.Errorf("%s: expected %v, got %v", c, e, g)
-			return
-		}
-	}
-	for c, e := range cs {
-		g := common.Val(c, 3, 3, reN)
-		if g != e[2] {
-			t.Errorf("%s: expected %v, got %v", c, e, g)
-			return
-		}
-	}
-}
 
 func TestIs(t *testing.T) {
 	cs := map[string]bool{
